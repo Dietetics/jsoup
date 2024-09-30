@@ -1,4 +1,4 @@
-name: Java CI
+name: myTest
 
 on: [push]
 
@@ -17,6 +17,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-
       - name: Run tests with Maven
-        run: mvn test
+        run: mvn test | tee test-output.log
+
+      - name: Display test results
+        run: |
+          echo "Les résultats des tests :"
+          grep 'Running org.jsoup.parser.myCharacterReaderTest' test-output.log
+          grep 'Tests run:' test-output.log
