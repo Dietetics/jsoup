@@ -18,5 +18,10 @@ jobs:
           java-version: '17'
 
       - name: Run a specific test with Maven
-        run: mvn -Dtest=MyCharacterReaderTest#testMethod test
+        run: mvn -Dtest=org.jsoup.parser.MyCharacterReaderTest#testMethod test | tee test-output.log
 
+      - name: Display test result
+        run: |
+          echo "Résultat du test spécifique :"
+          grep 'Running org.jsoup.parser.MyCharacterReaderTest' test-output.log
+          grep 'Tests run:' test-output.log
