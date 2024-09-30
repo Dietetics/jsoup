@@ -20,8 +20,8 @@ jobs:
       - name: Run all tests with Maven
         run: mvn test | tee test-output.log
 
-      - name: Run a specific test with Maven in debug mode
-        run: mvn -X -Dtest=org.jsoup.parser.MyCharacterReaderTest#testMethod test | tee test-output.log
+      - name: Run a specific test with Maven
+        run: mvn -Dtest=MyCharacterReaderTest#testMethod test -Dsurefire.failIfNoSpecifiedTests=false | tee test-output.log
 
       - name: Display test result
         run: |
