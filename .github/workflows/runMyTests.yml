@@ -17,9 +17,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Run tests with Maven
-        run: mvn test
-
       - name: Run my tests with Maven
         run: mvn test -Dtest=myCharacterReaderTest
 
