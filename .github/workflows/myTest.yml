@@ -17,6 +17,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Run a specific test with Maven
+        run: mvn -Dtest=org.jsoup.parser.myCharacterReaderTest#testMethod test
+
       - name: Run tests with Maven
         run: mvn test | tee test-output.log
 
@@ -25,3 +28,4 @@ jobs:
           echo "Les résultats des tests :"
           grep 'Running org.jsoup.parser.myCharacterReaderTest' test-output.log
           grep 'Tests run:' test-output.log
+          
