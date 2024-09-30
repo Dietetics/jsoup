@@ -765,4 +765,8 @@ public final class CharacterReader {
     boolean rangeEquals(final int start, final int count, final String cached) {
         return rangeEquals(charBuf, start, count, cached);
     }
+
+    public Reader getReader() {
+        return reader;
+    }
 }
