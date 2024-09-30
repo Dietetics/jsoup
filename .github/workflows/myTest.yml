@@ -1,11 +1,11 @@
-name: Java CI
+name: myTests
 
 on: [push]
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest1
 
     steps:
       - name: Checkout code
@@ -17,7 +17,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Run tests with Maven
+        run: mvn test
 
-      - name: Run specific tests with Maven
+      - name: Run my tests with Maven
         run: mvn test -Dtest=myCharacterReaderTest
 
