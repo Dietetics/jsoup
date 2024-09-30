@@ -1,4 +1,4 @@
-name: myTests
+name: allTests
 
 on: [push]
 
@@ -17,6 +17,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Run tests with Maven
+      - name: Run all tests with Maven
         run: mvn test
 
