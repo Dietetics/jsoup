@@ -20,26 +20,19 @@ public class Tag implements Cloneable {
     private String tagName;
     private final String normalName; // always the lower case version of this tag, regardless of case preservation mode
     private String namespace;
-    private boolean isBlock = true; // block
+    boolean isBlock = true; // block
     boolean formatAsBlock = true; // should be formatted as a block
     boolean empty = false; // can hold nothing; e.g. img
-    private boolean selfClosing = false; // can self close (<foo />). used for unknown tags that self close, without forcing them as empty.
+    boolean selfClosing = false; // can self close (<foo />). used for unknown tags that self close, without forcing them as empty.
     boolean preserveWhitespace = false; // for pre, textarea, script etc
-    private boolean formList = false; // a control that appears in forms: input, textarea, output etc
-    private boolean formSubmit = false; // a control that can be submitted in a form: input etc
+    boolean formList = false; // a control that appears in forms: input, textarea, output etc
+    boolean formSubmit = false; // a control that can be submitted in a form: input etc
 
     Tag(String tagName, String namespace) {
         this.tagName = tagName;
         normalName = Normalizer.lowerCase(tagName);
         this.namespace = namespace;
     }
-
-    // Public factory method to create a Tag instance
-    static Tag createTag(String tagName, String namespace) {
-        return new Tag(tagName, namespace);
-    }
-
-
 
 
     /**
