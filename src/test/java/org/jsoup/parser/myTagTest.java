@@ -1,16 +1,18 @@
 package org.jsoup.parser;
 
 import org.junit.jupiter.api.Test;
+import com.github.javafaker.Faker;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class myTagTest {
+    private final Faker faker = new Faker();
 
     @Test
     void testEquals_withDifferentObjectType() {
         // Arrange
         // Créez une instance de la classe Tag
-        Tag tag = new Tag("div", "html");
+        Tag tag = new Tag(faker.lorem().word().toLowerCase(), "html");
 
         // Créez un objet d'une classe différente (ici String)
         String differentObject = "Not a Tag";

@@ -7,7 +7,7 @@
 
 Les tests pour la méthode `close()` se trouvent dans la classe `myCharacterReaderTest`, fichier `myCharacterReaderTest.java`. 
 Le test particulier pour la branche `if (reader == null)` est documenté sous le nom `testClose_WhenReaderIsNull_ReturnsImmediately`.
-
+- **`ce test utilise la bibliotheque java-faker`**
 
 ## Méthodes Testées
 - **`close()`** : Cette méthode est testée pour garantir qu'elle fonctionne correctement dans plusieurs situations :
@@ -31,10 +31,7 @@ Cela aide les autres développeurs à comprendre l'intention derrière cette vé
 lors de futures modifications. Le test agit comme un contrat : si quelqu'un modifie la méthode et enlève cette 
 vérification, le test échouera, signalant qu'un comportement attendu a été altéré.
 
-
-
-
-
+  
 ## Couverture 
 
 - avant notre test ![image avant test](assets/methodeCloseAvant.png)
