@@ -11,12 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class myCharacterReaderTest {
     private CharacterReader characterReader;
 
-    @BeforeEach
-    public void setUp() {
-        // Initialisation correcte de characterReader
-        characterReader = new CharacterReader(new StringReader("test input"));
-    }
-
     /**
      * Verifiant que la methode close() n'essaie pas de fermer un reader deja nul.
      *
@@ -25,6 +19,10 @@ public class myCharacterReaderTest {
      */
     @Test
     public void testClose_WhenReaderIsNull_ReturnsImmediately() {
+
+        // Initialisation correcte de characterReader
+        characterReader = new CharacterReader(new StringReader("test input"));
+
         // Appel de la methode close une premiere fois pour rendre le reader null
         characterReader.close();
 
