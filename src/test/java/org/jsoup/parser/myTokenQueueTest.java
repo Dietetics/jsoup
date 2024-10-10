@@ -5,6 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe de test pour la methode matchesAny().
+ */
 class myTokenQueueTest {
 
     private TokenQueue tokenQueue;

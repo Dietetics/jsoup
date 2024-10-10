@@ -40,7 +40,7 @@ lors de futures modifications. Le test agit comme un contrat : si quelqu'un modi
 vérification, le test échouera, signalant qu'un comportement attendu a été altéré.
 
   
-## Couverture 
+## Couverture du test
 
 - avant notre test ![couverture sur close avant test](assets/methodeCloseAvant.png)
 - apres notre test ![couverture sur close apres test](assets/methodeCloseApres.png)
@@ -70,35 +70,35 @@ Les tests pour la méthode `equals(Object o)` se trouvent dans la classe `myTagT
 
 ## Raison des Méthodes Testées
 
-### 1. `testEquals_withDifferentObjectType`
+### 2. `testEquals_withDifferentObjectType`
 - **Objectif** : Vérifier que la méthode `equals()` retourne `false` lorsqu'elle est comparée à un objet d'un autre type (dans notre cas, une chaîne de caractères).
 - **Justification** : Il est essentiel que `equals()` ne retourne jamais `true` lorsque l'objet comparé n'est pas une instance de `Tag`. Cela garantit que la comparaison d'objets de types différents est sécurisée et prévient les erreurs dans le code.
 
-### 2. `testEquals_withDifferentEmptyFlag`
+### 3. `testEquals_withDifferentEmptyFlag`
 - **Objectif** : Vérifier que deux instances de `Tag` avec des valeurs différentes pour le champ `empty` ne sont pas considérées comme égales.
 - **Justification** : Le champ `empty` est un attribut important dans la définition d'un `Tag`. Ce test garantit que cet attribut est pris en compte dans la comparaison d'égalité, ce qui est crucial lorsque deux `Tag` semblent similaires mais n'ont pas les mêmes caractéristiques.
 
-### 3. `testEquals_withDifferentFormatAsBlockFlag`
+### 4. `testEquals_withDifferentFormatAsBlockFlag`
 - **Objectif** : Tester que deux instances de `Tag` avec des valeurs différentes pour le champ `formatAsBlock` sont considérées comme non égales.
 - **Justification** : Le formatage en tant que bloc est une propriété importante pour certaines balises HTML. Ce test garantit que la méthode `equals()` différencie correctement les `Tag` qui doivent être formatés en tant que blocs de ceux qui ne le sont pas.
 
-### 4. `testEquals_withDifferentIsBlockFlag`
+### 5. `testEquals_withDifferentIsBlockFlag`
 - **Objectif** : Vérifier que deux instances de `Tag` avec des valeurs différentes pour `isBlock` ne sont pas égales.
 - **Justification** : `isBlock` définit si un `Tag` est considéré comme un élément de bloc dans le modèle HTML. Cette propriété impacte le rendu et la structure de la page. Ce test garantit que cette différence est correctement reflétée lors de la comparaison des `Tag`.
 
-### 5. `testEquals_withDifferentPreserveWhitespaceFlag`
+### 6. `testEquals_withDifferentPreserveWhitespaceFlag`
 - **Objectif** : Tester que deux `Tag` avec des valeurs différentes pour le champ `preserveWhitespace` ne sont pas égaux.
 - **Justification** : La préservation des espaces blancs est importante pour certains éléments, comme `<pre>`. Ce test garantit que cette différence est prise en compte lors de la comparaison de deux `Tag`.
 
-### 6. `testEquals_withDifferentSelfClosingFlag`
+### 7. `testEquals_withDifferentSelfClosingFlag`
 - **Objectif** : Vérifier que deux instances de `Tag` avec des valeurs différentes pour `selfClosing` sont considérées comme non égales.
 - **Justification** : Les balises auto-fermantes (`selfClosing`) sont une caractéristique importante dans le langage HTML (par exemple, `<img />`). Ce test garantit que la méthode `equals()` différencie correctement les balises auto-fermantes des balises normales.
 
-### 7. `testEquals_withDifferentFormListFlag`
+### 8. `testEquals_withDifferentFormListFlag`
 - **Objectif** : Tester que deux `Tag` avec des valeurs différentes pour `formList` ne sont pas égaux.
 - **Justification** : Le champ `formList` indique si le `Tag` appartient à une liste de formulaires. C'est une propriété spécifique qui doit être prise en compte dans la comparaison d'égalité pour éviter les erreurs lors de la gestion des balises dans des contextes de formulaire.
 
-### 8. `testEquals_withDifferentFormSubmitFlag`
+### 9. `testEquals_withDifferentFormSubmitFlag`
 - **Objectif** : Vérifier que deux instances de `Tag` avec des valeurs différentes pour le champ `formSubmit` sont considérées comme non égales.
 - **Justification** : Le champ `formSubmit` détermine si un `Tag` doit être soumis dans un formulaire HTML. Cette propriété doit être prise en compte pour garantir une comparaison correcte des `Tag` dans un contexte de soumission de formulaire.
 
@@ -108,7 +108,7 @@ Bref, Ces tests unitaires permettent de s'assurer que toutes les propriétés im
 évaluées lors de la comparaison d'égalité. Ils visent à renforcer la robustesse du code en garantissant que 
 la méthode `equals()` prend en compte toutes les différences pertinentes entre deux objets de type `Tag`.
 
-## Couverture
+## Couverture des 8 tests
 
 - avant nos tests ![couverture sur Equals avant test](assets/methodeEqualsAvant.png)
 - apres nos tests ![couverture sur Equals apres test](assets/methodeEqualsApres.png)
@@ -129,9 +129,8 @@ Le test particulier pour la branche `if (isEmpty())return false;` est documenté
     - **Description** : Cette méthode vérifie si le caractère courant dans la queue correspond à l'un des caractères fournis en argument.
     - **Justification du choix du test** :
         - La méthode `matchesAny` est essentielle pour le fonctionnement correct de la classe `TokenQueue`. En vérifiant les correspondances de caractères, elle joue un rôle crucial dans le traitement des entrées. Tester cette méthode garantit qu'elle fonctionne comme prévu dans divers scénarios, y compris lorsqu'elle est utilisée avec une queue vide.
-        - Les tests incluent des cas où la queue est vide et où la queue contient des caractères pour assurer une couverture complète des comportements possibles.
 
-## Couverture
+## Couverture du test
 
 - avant nos tests ![couverture sur matchesAny avant test](assets/methodeMatchesAnyAvant.png)
 - apres nos tests ![couverture sur matchesAny apres test](assets/methodeMatchesAnyApres.png)

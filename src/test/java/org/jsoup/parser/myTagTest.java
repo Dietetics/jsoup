@@ -6,7 +6,7 @@ import com.github.javafaker.Faker;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Classe de test pour mes 8 tests unitaires sur la classe Tag.
+ * Classe de test pour mes 8 tests unitaires dans la classe Tag.
  */
 public class myTagTest {
     private final Faker faker = new Faker();
@@ -75,11 +75,11 @@ public class myTagTest {
     /**
      * Teste la méthode equals() avec deux tags ayant des champs "formatAsBlock" différents.
      *
-     * <p>
+     *
      * Ce test vérifie que la méthode equals() de la classe Tag retourne false
      * lorsque deux instances de Tag ont des propriétés identiques sauf pour le champ "formatAsBlock".
      * Le but est de s'assurer que le champ "formatAsBlock" est pris en compte dans la comparaison d'égalité.
-     * </p>
+     *
      */
     @Test
     void testEquals_withDifferentFormatAsBlockFlag() {
@@ -93,17 +93,17 @@ public class myTagTest {
         boolean areTagsEqual = tag1.equals(tag2);
 
         // Assert
-        assertFalse(areTagsEqual, "Tags should not be equal because their 'formatAsBlock' fields differ.");
+        assertFalse(areTagsEqual, "Les tags ne devraient pas être égaux car leurs champs 'formatAsBlock' diffèrent.");
     }
 
     /**
      * Teste la méthode equals() avec deux tags ayant des champs "isBlock" différents.
      *
-     * <p>
+     *
      * Ce test vérifie que la méthode equals() retourne false lorsque deux instances de Tag
      * ont des propriétés identiques sauf pour le champ "isBlock". Cela garantit que la comparaison
      * d'égalité prend bien en compte la propriété "isBlock".
-     * </p>
+     *
      */
     @Test
     void testEquals_withDifferentIsBlockFlag() {
@@ -117,17 +117,17 @@ public class myTagTest {
         boolean areTagsEqual = tag1.equals(tag2);
 
         // Assert
-        assertFalse(areTagsEqual, "Tags should not be equal because their 'isBlock' fields differ.");
+        assertFalse(areTagsEqual, "Les tags ne devraient pas être égaux car leurs champs 'isBlock' diffèrent.");
     }
 
     /**
      * Teste la méthode equals() avec deux tags ayant des champs "preserveWhitespace" différents.
      *
-     * <p>
+     *
      * Ce test garantit que la méthode equals() retourne false si deux tags ont
      * des propriétés identiques sauf pour le champ "preserveWhitespace". Cela permet de vérifier que
      * la comparaison prend bien en compte cette propriété spécifique.
-     * </p>
+     *
      */
     @Test
     void testEquals_withDifferentPreserveWhitespaceFlag() {
@@ -141,17 +141,17 @@ public class myTagTest {
         boolean areTagsEqual = tag1.equals(tag2);
 
         // Assert
-        assertFalse(areTagsEqual, "Tags should not be equal because their 'preserveWhitespace' fields differ.");
+        assertFalse(areTagsEqual, "Les tags ne devraient pas être égaux car leurs champs 'preserveWhitespace' diffèrent.");
     }
 
     /**
      * Teste la méthode equals() avec deux tags ayant des champs "selfClosing" différents.
      *
-     * <p>
+     *
      * Ce test vérifie que la méthode equals() retourne false si deux instances de Tag
      * ont les mêmes propriétés sauf pour le champ "selfClosing". Cela permet de garantir que
      * cette propriété est bien prise en compte dans la comparaison.
-     * </p>
+     *
      */
     @Test
     void testEquals_withDifferentSelfClosingFlag() {
@@ -165,17 +165,17 @@ public class myTagTest {
         boolean areTagsEqual = tag1.equals(tag2);
 
         // Assert
-        assertFalse(areTagsEqual, "Tags should not be equal because their 'selfClosing' fields differ.");
+        assertFalse(areTagsEqual, "Les tags ne devraient pas être égaux car leurs champs 'selfClosing' diffèrent.");
     }
 
     /**
      * Teste la méthode equals() avec deux tags ayant des champs "formList" différents.
      *
-     * <p>
+     *
      * Ce test vérifie que la méthode equals() retourne false si deux tags ont
      * des propriétés identiques sauf pour le champ "formList". Cela permet de s'assurer que cette propriété
      * est bien prise en compte dans la comparaison d'égalité.
-     * </p>
+     *
      */
     @Test
     void testEquals_withDifferentFormListFlag() {
@@ -189,17 +189,17 @@ public class myTagTest {
         boolean areTagsEqual = tag1.equals(tag2);
 
         // Assert
-        assertFalse(areTagsEqual, "Tags should not be equal because their 'formList' fields differ.");
+        assertFalse(areTagsEqual, "Les tags ne devraient pas être égaux car leurs champs 'formList' diffèrent.");
     }
 
     /**
      * Teste la méthode equals() avec deux tags ayant des champs "formSubmit" différents.
      *
-     * <p>
+     *
      * Ce test vérifie que la méthode equals() retourne false si deux instances de Tag
      * ont des propriétés identiques sauf pour le champ "formSubmit". Cela permet de s'assurer que
      * ce champ est bien pris en compte lors de la comparaison.
-     * </p>
+     *
      */
     @Test
     void testEquals_withDifferentFormSubmitFlag() {
@@ -213,6 +213,6 @@ public class myTagTest {
         boolean areTagsEqual = tag1.equals(tag2);
 
         // Assert
-        assertFalse(areTagsEqual, "Tags should not be equal because their 'formSubmit' fields differ.");
+        assertFalse(areTagsEqual, "Les tags ne devraient pas être égaux car leurs champs 'formSubmit' diffèrent.");
     }
 }
