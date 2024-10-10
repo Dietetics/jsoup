@@ -5,7 +5,9 @@
 - [Test#1](#test1)
 - [Test#2-9](#test2a9)
 - [Test#10](#test10)
-
+- [Github action statistique](#Github-action-statistiques)
+- [Couverture a partir de jacoco](#Couverture-final-a-partir-de-jacoco)
+- [Amelioration de couverture](#Couverture-amelioration)
 
 ---
 # Test1
@@ -40,8 +42,8 @@ vérification, le test échouera, signalant qu'un comportement attendu a été a
   
 ## Couverture 
 
-- avant notre test ![image avant test](assets/methodeCloseAvant.png)
-- apres notre test ![image apres test](assets/methodeCloseApres.png)
+- avant notre test ![couverture sur close avant test](assets/methodeCloseAvant.png)
+- apres notre test ![couverture sur close apres test](assets/methodeCloseApres.png)
 
 
 
@@ -108,8 +110,8 @@ la méthode `equals()` prend en compte toutes les différences pertinentes entre
 
 ## Couverture
 
-- avant nos tests ![image avant test](assets/methodeEqualsAvant.png)
-- apres nos tests ![image apres test](assets/methodeEqualsApres.png)
+- avant nos tests ![couverture sur Equals avant test](assets/methodeEqualsAvant.png)
+- apres nos tests ![couverture sur Equals apres test](assets/methodeEqualsApres.png)
 
 
 
@@ -131,16 +133,30 @@ Le test particulier pour la branche `if (isEmpty())return false;` est documenté
 
 ## Couverture
 
-- avant nos tests ![image avant test](assets/methodeMatchesAnyAvant.png)
-- apres nos tests ![image apres test](assets/methodeTokenQueueApres.png)
+- avant nos tests ![couverture sur matchesAny avant test](assets/methodeMatchesAnyAvant.png)
+- apres nos tests ![couverture sur matchesAny apres test](assets/methodeMatchesAnyApres.png)
+
+
+
 
 
 ---
-# Couverture final 
+# Github action statistiques
+
+- avant nos tests ![image sur la reussir des tests avant nos tests](assets/githubStatistiquesToutTestsAvant.png)
+
+- mes tests ![image sur la reussir de mes tests](assets/githubStatistiquesMyTestsApres.png)
+- Tous les tests ![image sur la reussir de tous les tests](assets/githubStatistiquesToutTestsApres.png)
+
+
+
+---
+# Couverture final a partir de jacoco
 
 - avant nos tests ![image avant les tests](assets/jacocoCoverageInitiale.png)
 - apres nos tests ![image apres les tests](assets/jacocoCoverageFinal.png)
 
-
-
+---
+# Couverture amelioration
+Coverage apres nos tests ![image du coverage apres nos tests](assets/githubStatistiquesCoverage.png)
 
