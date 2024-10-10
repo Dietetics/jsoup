@@ -57,6 +57,7 @@ vérification, le test échouera, signalant qu'un comportement attendu a été a
 - Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myTagTest.java`
 
 Les tests pour la méthode `equals(Object o)` se trouvent dans la classe `myTagTest`, fichier `myTagTest.java`.
+
 2. test particulier pour la branche `if (!(o instanceof Tag)) return false;` est documenté sous le nom `testEquals_withDifferentObjectType`.
    - **`ce test utilise la bibliotheque java-faker`**
 3. test particulier pour la branche `if (empty != tag.empty) return false;` est documenté sous le nom `testEquals_withDifferentEmptyFlag`.
