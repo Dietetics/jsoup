@@ -21,8 +21,8 @@ Le test particulier pour la branche `if (reader == null)` est documenté sous le
 
 ## Petite description
 Cette méthode est testée pour garantir qu'elle fonctionne correctement dans plusieurs situations :
-    - **Fermeture normale** : Le lecteur est fermé correctement après utilisation.
-    - **Fermeture avec un lecteur nul** (notre test) : Ce cas s'assure que la méthode retourne immédiatement 
+  - **Fermeture normale** : Le lecteur est fermé correctement après utilisation.
+  - **Fermeture avec un lecteur nul** (notre test) : Ce cas s'assure que la méthode retourne immédiatement 
 si le lecteur est déjà nul, garantissant que la méthode ne tente aucune action sur un état déjà clôturé.
 
 ## Justification de notre choix
