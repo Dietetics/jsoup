@@ -6,33 +6,37 @@ import com.github.javafaker.Faker;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Classe de test pour la classe Tag.
+ * Classe de test pour mes 8 tests unitaires sur la classe Tag.
  */
 public class myTagTest {
     private final Faker faker = new Faker();
 
     /**
-     * Teste la méthode equals() avec un objet d'un type différent.
+     * Teste la methode equals() avec un objet d'un type different.
      *
-     * <p>
-     * Ce test vérifie que la méthode equals() de la classe Tag retourne false
-     * lorsqu'elle est comparée à un objet d'un autre type. Cela garantit que
-     * la méthode equals() ne retourne pas "true" par erreur lorsque l'objet
-     * passé n'est pas une instance de Tag.
-     * </p>
+     * Ce test verifie que la methode equals() de la classe Tag retourne false
+     * lorsqu'elle est comparee a un objet d'un autre type. Cela garantit que
+     * la methode equals() ne retourne pas "true" par erreur lorsque l'objet
+     * passe n'est pas une instance de Tag.
      */
     @Test
     void testEquals_withDifferentObjectType() {
+
+        String motGenererParFaker = faker.lorem().word().toLowerCase();
+
         // Arrange
-        Tag tag = new Tag(faker.lorem().word().toLowerCase(), "html");
-        String differentObject = "Not a Tag";
+        Tag tag = new Tag(motGenererParFaker, "html");
+        String differentObject = motGenererParFaker;
 
         // Act
         boolean areEqual = tag.equals(differentObject);
 
         // Assert
-        assertFalse(areEqual, "Tag should not be equal to an object of a different type.");
+        assertFalse(areEqual, "Un tag ne devrait pas etre egal a un objet dun type different");
     }
+
+
+
 
     /**
      * Teste la méthode equals() avec deux tags ayant des champs "empty" différents.

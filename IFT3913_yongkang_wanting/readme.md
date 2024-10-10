@@ -1,7 +1,15 @@
-# Documentation des Tests Unitaires
+# Documentation de mes 10 Tests Unitaires
+
+---
+## Table des matières
+- [Test#1](#Test#1)
+- [Test#2-9](#Test#2-#9)
+- [Test#10](#Test#10)
 
 
-## Emplacement du Test - Méthode close()
+---
+# Test#1
+## Emplacement du Test - Methode close()
 - **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/5db594630b7972d015520a56f861c8d89d5170a2/src/test/java/org/jsoup/parser/myCharacterReaderTest.java)
 - Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myCharacterReaderTest.java`
 
@@ -41,18 +49,26 @@ vérification, le test échouera, signalant qu'un comportement attendu a été a
 
 
 
+---
+# Test#2 a #9
+## Emplacement des 8 Tests unitaires pour la Methode equals(Object o)
+
+- **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/yong/src/test/java/org/jsoup/parser/myTagTest.java)
+- Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myTagTest.java`
+
+Les tests pour la méthode `equals(Object o)` se trouvent dans la classe `myTagTest`, fichier `myTagTest.java`.
+2. test particulier pour la branche `if (!(o instanceof Tag)) return false;` est documenté sous le nom `testEquals_withDifferentObjectType`.
+   - **`ce test utilise la bibliotheque java-faker`**
+3. test particulier pour la branche `if (empty != tag.empty) return false;` est documenté sous le nom `testEquals_withDifferentEmptyFlag`.
+4. test particulier pour la branche `if (formatAsBlock != tag.formatAsBlock) return false;` est documenté sous le nom `testEquals_withDifferentFormatAsBlockFlag`.
+5. test particulier pour la branche `if (isBlock != tag.isBlock) return false;` est documenté sous le nom `testEquals_withDifferentIsBlockFlag`.
+6. test particulier pour la branche `if (preserveWhitespace != tag.preserveWhitespace) return false;` est documenté sous le nom `testEquals_withDifferentPreserveWhitespaceFlag`.
+7. test particulier pour la branche `if (selfClosing != tag.selfClosing) return false;` est documenté sous le nom `testEquals_withDifferentSelfClosingFlag`.
+8. test particulier pour la branche `if (formList != tag.formList) return false;` est documenté sous le nom `testEquals_withDifferentFormListFlag`.
+9. test particulier pour la branche `return formSubmit == tag.formSubmit;` est documenté sous le nom `testEquals_withDifferentFormSubmitFlag`.
 
 
-
-
-
-# Justification des Méthodes Testées
-
-## Introduction
-
-Ce document justifie les choix des méthodes de test pour la classe `Tag`. Chaque méthode testée dans les cas unitaires a pour but de garantir que la logique métier liée à l'égalité entre les instances de `Tag` fonctionne comme prévu. La méthode `equals()` est cruciale pour garantir la comparaison correcte d'objets dans les systèmes Java, et les tests suivants vérifient que chaque propriété influençant l'égalité des objets est bien prise en compte.
-
-## Choix des Méthodes Testées
+## Raison des Méthodes Testées
 
 ### 1. `testEquals_withDifferentObjectType`
 - **Objectif** : Vérifier que la méthode `equals()` retourne `false` lorsqu'elle est comparée à un objet d'un autre type (ici une chaîne de caractères).
@@ -90,12 +106,22 @@ Ce document justifie les choix des méthodes de test pour la classe `Tag`. Chaqu
 
 Les tests unitaires développés permettent de s'assurer que toutes les propriétés importantes de la classe `Tag` sont correctement évaluées lors de la comparaison d'égalité. Ces tests visent à renforcer la robustesse du code en garantissant que la méthode `equals()` prend en compte toutes les différences pertinentes entre deux objets de type `Tag`.
 
+## Couverture
+
+- avant nos tests ![image avant test](assets/methodeEqualsAvant.png)
+- apres nos tests ![image apres test](assets/methodeEqualsApres.png)
 
 
 
 
+---
+# Test#10
+## Emplacement des 8 Tests unitaires pour la Methode equals(Object o)
 
 
+
+
+---
 # Couverture final 
 
 - avant nos tests ![image avant les tests](assets/jacocoCoverageInitiale.png)
