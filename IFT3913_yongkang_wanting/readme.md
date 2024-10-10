@@ -13,7 +13,7 @@
 # Test1
 ## Emplacement du Test - Methode close()
 - **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/master/src/test/java/org/jsoup/parser/myCharacterReaderTest.java)
-- Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myCharacterReaderTest.java`
+  - Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myCharacterReaderTest.java`
 
 Les tests pour la méthode `close()` se trouvent dans la classe `myCharacterReaderTest`, fichier `myCharacterReaderTest.java`. 
 Le test particulier pour la branche `if (reader == null)` est documenté sous le nom `testClose_WhenReaderIsNull_ReturnsImmediately`.
@@ -54,9 +54,8 @@ vérification, le test échouera, signalant qu'un comportement attendu a été a
 ## Emplacement des 8 Tests unitaires pour la Methode equals(Object o)
 
 - **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/master/src/test/java/org/jsoup/parser/myTagTest.java)
-- Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myTagTest.java`
-
-Les tests pour la méthode `equals(Object o)` se trouvent dans la classe `myTagTest`, fichier `myTagTest.java`.
+  - Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myTagTest.java`
+  - Les tests pour la méthode `equals(Object o)` se trouvent dans la classe `myTagTest`, fichier `myTagTest.java`.
 
 2. test particulier pour la branche `if (!(o instanceof Tag)) return false;` est documenté sous le nom `testEquals_withDifferentObjectType`.
    - **`ce test utilise la bibliotheque java-faker`**
@@ -121,7 +120,7 @@ la méthode `equals()` prend en compte toutes les différences pertinentes entre
 # Test10
 ## Emplacement du Test - matchesAny(char... seq)
 - **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/master/src/test/java/org/jsoup/parser/myTokenQueueTest.java)
-- Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myTokenQueueTest.java`
+  - Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myTokenQueueTest.java`
 
 Le test pour la méthode `matchesAny(char... seq)` se trouve dans la classe `myTokenQueueTest`, fichier `myTokenQueueTest.java`.
 Le test particulier pour la branche `if (isEmpty())return false;` est documenté sous le nom `testMatchesAny_withEmptyQueue_returnsFalse`.
