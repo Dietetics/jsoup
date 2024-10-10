@@ -8,7 +8,9 @@ import java.io.StringReader;
 
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-
+/**
+ * Classe de test pour la methode close().
+ */
 public class myCharacterReaderTest {
     private CharacterReader characterReader;
     private final Faker faker = new Faker();

@@ -2,13 +2,13 @@
 
 ---
 ## Table des matières
-- [Test#1](#Test#1)
-- [Test#2-9](#Test#2-#9)
-- [Test#10](#Test#10)
+- [Test#1](#test1)
+- [Test#2-9](#test2a9)
+- [Test#10](#test10)
 
 
 ---
-# Test#1
+# Test1
 ## Emplacement du Test - Methode close()
 - **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/5db594630b7972d015520a56f861c8d89d5170a2/src/test/java/org/jsoup/parser/myCharacterReaderTest.java)
 - Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myCharacterReaderTest.java`
@@ -29,9 +29,7 @@ Nous testons la méthode `close()` pour nous assurer qu'elle ne lève pas d'exce
 qui interagiront avec cette partie du système. En somme, il s'agit d'une pratique essentielle pour maintenir un code de 
 haute qualité, surtout dans un environnement collaboratif où les modifications sont fréquentes.
 
-- **Robustesse** : Ce test garantit que le comportement du programme reste inchangé si quelqu'un modifie cette méthode 
-- à l'avenir (par exemple, en supprimant accidentellement cette vérification). Cela assure que la méthode ne tente pas 
-- de fermer un flux déjà null
+- **Robustesse** : Ce test garantit que le comportement du programme reste inchangé si quelqu'un modifie cette méthode à l'avenir (par exemple, en supprimant accidentellement cette vérification). Cela assure que la méthode ne tente pas de fermer un flux déjà null
 
 - **Documentation par le test** : En écrivant ce test, nous fournissons une documentation vivante qui explique 
 explicitement que la méthode close() doit gérer correctement l'état nul du Reader. 
@@ -50,7 +48,7 @@ vérification, le test échouera, signalant qu'un comportement attendu a été a
 
 
 ---
-# Test#2 a #9
+# Test2a9
 ## Emplacement des 8 Tests unitaires pour la Methode equals(Object o)
 
 - **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/yong/src/test/java/org/jsoup/parser/myTagTest.java)
@@ -71,7 +69,7 @@ Les tests pour la méthode `equals(Object o)` se trouvent dans la classe `myTagT
 ## Raison des Méthodes Testées
 
 ### 1. `testEquals_withDifferentObjectType`
-- **Objectif** : Vérifier que la méthode `equals()` retourne `false` lorsqu'elle est comparée à un objet d'un autre type (ici une chaîne de caractères).
+- **Objectif** : Vérifier que la méthode `equals()` retourne `false` lorsqu'elle est comparée à un objet d'un autre type (dans notre cas, une chaîne de caractères).
 - **Justification** : Il est essentiel que `equals()` ne retourne jamais `true` lorsque l'objet comparé n'est pas une instance de `Tag`. Cela garantit que la comparaison d'objets de types différents est sécurisée et prévient les erreurs dans le code.
 
 ### 2. `testEquals_withDifferentEmptyFlag`
@@ -104,7 +102,9 @@ Les tests pour la méthode `equals(Object o)` se trouvent dans la classe `myTagT
 
 ## Conclusion
 
-Les tests unitaires développés permettent de s'assurer que toutes les propriétés importantes de la classe `Tag` sont correctement évaluées lors de la comparaison d'égalité. Ces tests visent à renforcer la robustesse du code en garantissant que la méthode `equals()` prend en compte toutes les différences pertinentes entre deux objets de type `Tag`.
+Bref, Ces tests unitaires permettent de s'assurer que toutes les propriétés importantes de la classe `Tag` sont correctement 
+évaluées lors de la comparaison d'égalité. Ils visent à renforcer la robustesse du code en garantissant que 
+la méthode `equals()` prend en compte toutes les différences pertinentes entre deux objets de type `Tag`.
 
 ## Couverture
 
@@ -115,10 +115,24 @@ Les tests unitaires développés permettent de s'assurer que toutes les proprié
 
 
 ---
-# Test#10
-## Emplacement des 8 Tests unitaires pour la Methode equals(Object o)
+# Test10
+## Emplacement du Test - matchesAny(char... seq)
+- **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/yong/src/test/java/org/jsoup/parser/myTokenQueueTest.java)
+- Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myTokenQueueTest.java`
 
+Le test pour la méthode `matchesAny(char... seq)` se trouve dans la classe `myTokenQueueTest`, fichier `myTokenQueueTest.java`.
+Le test particulier pour la branche `if (isEmpty())return false;` est documenté sous le nom `testMatchesAny_withEmptyQueue_returnsFalse`.
 
+- **Bonus** : `Ce test utilise la bibliotheque java-faker`
+    - **Description** : Cette méthode vérifie si le caractère courant dans la queue correspond à l'un des caractères fournis en argument.
+    - **Justification du choix du test** :
+        - La méthode `matchesAny` est essentielle pour le fonctionnement correct de la classe `TokenQueue`. En vérifiant les correspondances de caractères, elle joue un rôle crucial dans le traitement des entrées. Tester cette méthode garantit qu'elle fonctionne comme prévu dans divers scénarios, y compris lorsqu'elle est utilisée avec une queue vide.
+        - Les tests incluent des cas où la queue est vide et où la queue contient des caractères pour assurer une couverture complète des comportements possibles.
+
+## Couverture
+
+- avant nos tests ![image avant test](assets/methodeMatchesAnyAvant.png)
+- apres nos tests ![image apres test](assets/methodeTokenQueueApres.png)
 
 
 ---
@@ -126,3 +140,7 @@ Les tests unitaires développés permettent de s'assurer que toutes les proprié
 
 - avant nos tests ![image avant les tests](assets/jacocoCoverageInitiale.png)
 - apres nos tests ![image apres les tests](assets/jacocoCoverageFinal.png)
+
+
+
+

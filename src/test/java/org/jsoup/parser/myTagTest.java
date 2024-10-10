@@ -38,14 +38,17 @@ public class myTagTest {
 
 
 
+
+
+
     /**
      * Teste la méthode equals() avec deux tags ayant des champs "empty" différents.
      *
-     * <p>
+     *
      * Ce test vérifie que la méthode equals() de la classe Tag retourne false
      * lorsque deux instances de Tag ont les mêmes propriétés sauf le champ "empty".
      * Le but est de s'assurer que le champ "empty" est pris en compte dans la comparaison d'égalité.
-     * </p>
+     *
      */
     @Test
     void testEquals_withDifferentEmptyFlag() {
@@ -59,8 +62,15 @@ public class myTagTest {
         boolean areTagsEqual = tag1.equals(tag2);
 
         // Assert
-        assertFalse(areTagsEqual, "Tags should not be equal because their 'empty' fields differ.");
+        assertFalse(areTagsEqual, "Les balises ne devraient pas être égales car leurs champs 'empty' sont différents.");
     }
+
+
+
+
+
+
+
 
     /**
      * Teste la méthode equals() avec deux tags ayant des champs "formatAsBlock" différents.
