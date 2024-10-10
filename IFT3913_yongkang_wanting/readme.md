@@ -53,5 +53,5 @@ vérification, le test échouera, signalant qu'un comportement attendu a été a
 
 # Couverture final 
 
-- avant nos tests ![image avant les tests](assets/9.29jacocoCoverage.png)
-- apres nos tests ![image apres les tests](assets/#.png)
+- avant nos tests ![image avant les tests](assets/jacocoCoverageInitiale.png)
+- apres nos tests ![image apres les tests](assets/jacocoCoverageFinal.png)
