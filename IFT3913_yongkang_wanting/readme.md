@@ -12,7 +12,7 @@
 ---
 # Test1
 ## Emplacement du Test - Methode close()
-- **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/5db594630b7972d015520a56f861c8d89d5170a2/src/test/java/org/jsoup/parser/myCharacterReaderTest.java)
+- **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/master/src/test/java/org/jsoup/parser/myCharacterReaderTest.java)
 - Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myCharacterReaderTest.java`
 
 Les tests pour la méthode `close()` se trouvent dans la classe `myCharacterReaderTest`, fichier `myCharacterReaderTest.java`. 
@@ -53,7 +53,7 @@ vérification, le test échouera, signalant qu'un comportement attendu a été a
 # Test2a9
 ## Emplacement des 8 Tests unitaires pour la Methode equals(Object o)
 
-- **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/yong/src/test/java/org/jsoup/parser/myTagTest.java)
+- **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/master/src/test/java/org/jsoup/parser/myTagTest.java)
 - Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myTagTest.java`
 
 Les tests pour la méthode `equals(Object o)` se trouvent dans la classe `myTagTest`, fichier `myTagTest.java`.
@@ -119,7 +119,7 @@ la méthode `equals()` prend en compte toutes les différences pertinentes entre
 ---
 # Test10
 ## Emplacement du Test - matchesAny(char... seq)
-- **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/yong/src/test/java/org/jsoup/parser/myTokenQueueTest.java)
+- **Visuel à partir de GitHub** : [Lien vers le test](https://github.com/Dietetics/jsoup/blob/master/src/test/java/org/jsoup/parser/myTokenQueueTest.java)
 - Path détaillé à partir de la racine de contenu: `src/test/java/org/jsoup/parser/myTokenQueueTest.java`
 
 Le test pour la méthode `matchesAny(char... seq)` se trouve dans la classe `myTokenQueueTest`, fichier `myTokenQueueTest.java`.
