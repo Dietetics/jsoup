@@ -12,12 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macOS-latest
+        java:
+          - 8
+          - 17
+          - 21
         jvm_flag:
-          - "-XX:+UseG1GC"         # Flag pour garbage collection
-          - "-XX:+UseStringDeduplication" # Optimisation de mémoire
-          - "-XX:+AggressiveOpts"  # Optimisations agressives
-          - "-XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation" # Diagnostic
-          - "-XX:MaxInlineSize=100" # Performance
+          - "-XX:+UseG1GC"
+          - "-XX:+PrintGCDetails"
+          - "-XX:MaxHeapSize=512m"
+          - "-XX:+UnlockExperimentalVMOptions"
+          - "-XX:ConcGCThreads=2"
 
     steps:
       - name: Checkout code
