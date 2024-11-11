@@ -1,0 +1,63 @@
+name: Combined Fun Commits and JVM Flags Test Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  fun-commits-and-jvm-flags:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Checkout du code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Étape 2 : Configurer le message de commit humoristique
+      - name: Configure Commit Message
+        env:
+          COMMIT_MSG: "Ajout de tests JVM - C’est plus rapide que votre café du matin! ☕🚀"
+        run: |
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "action@github.com"
+          echo "Committing with a touch of fun!"
+
+      # Étape 3 : Faire des changements (exemple d'ajout de code automatique)
+      - name: Make Changes
+        run: |
+          # Simule des changements pour l’exemple
+          echo "// Code modifié automatiquement pour test" >> testfile.java
+          git add .
+          git commit -m "$COMMIT_MSG" || echo "Rien à committer, passage à l'étape suivante"
+
+      # Étape 4 : Pousser les changements
+      - name: Push Changes
+        run: |
+          git push || echo "Pas de changements à pousser"
+
+      # Étape 5 : Logging amusant
+      - name: Fun Logging
+        run: |
+          echo "🚀 Démarrage des tests avec une touche d'humour! 🚀"
+          echo "💻 Préparez-vous... Tests en cours! 💻"
+          echo "
+          ██████╗░██╗██████╗░████████╗██╗░░░░░░█████╗░██████╗░
+          ██╔══██╗██║██╔══██╗╚══██╔══╝██║░░░░░██╔══██╗██╔══██╗
+          ██████╔╝██║██████╔╝░░░██║░░░██║░░░░░███████║██║░░██║
+          ██╔═══╝░██║██╔═══╝░░░░██║░░░██║░░░░░██╔══██║██║░░██║
+          ██║░░░░░██║██║░░░░░░░░██║░░░███████╗██║░░██║██████╔╝
+          ╚═╝░░░░░╚═╝╚═╝░░░░░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═════╝░
+          "
+
+      # Étape 6 : Installer Java
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11' # Spécifiez la version Java que vous voulez utiliser
+
+      # Étape 7 : Exécuter des tests avec les flags JVM
+      - name: Run JVM Tests with Flags
+        run: |
+          # Exemple de commande pour exécuter un test Java avec des flags JVM
+          java -Xms512m -Xmx1024m -jar myapp.jar
