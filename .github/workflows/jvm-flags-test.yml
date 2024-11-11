@@ -1,16 +1,15 @@
 # .github/workflows/jvm-flags-test.yml
 name: JVM Flags Test
-
 on:
   push:
-    branches:
-      - master
   pull_request:
+  workflow_dispatch:
 
 jobs:
-  test-with-flags:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os:
           - ubuntu-latest
@@ -27,33 +26,34 @@ jobs:
           - "-XX:+UnlockExperimentalVMOptions"
           - "-XX:ConcGCThreads=2"
 
+    name: "Test JDK ${{ matrix.java }}, OS: ${{ matrix.os }}, Flag: ${{ matrix.jvm_flag }}"
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Set up Java
-        uses: actions/setup-java@v2
+      - name: Set up JDK ${{ matrix.java }}
+        uses: actions/setup-java@v4
         with:
-          java-version: '11'
+          java-version: ${{ matrix.java }}
+          distribution: 'zulu'
+          cache: 'maven'
 
-      - name: Set JVM Flag
-        run: echo "MAVEN_OPTS=${{ matrix.jvm_flag }}" >> $GITHUB_ENV
-
-      - name: Run tests with Maven
-        run: mvn clean test
-
-      - name: Run tests with JaCoCo
-        run: mvn clean verify
-
-      - name: Copy JaCoCo report
-        run: cp target/site/jacoco/index.html .
-
-
-      - name: Upload Test Coverage Report
-        if: always()
+      - name: Log JVM Flag
         run: |
-          # Utilisez une commande pour générer un rapport de couverture (par exemple avec JaCoCo)
-          mvn jacoco:report
-          # Enregistrez le rapport de couverture pour chaque flag
-          cp target/site/jacoco/index.html coverage-report-${{ matrix.jvm_flag }}.html
-        # Vous pouvez utiliser actions/upload-artifact pour sauvegarder les rapports
+          echo "Running with JVM flag: ${{ matrix.jvm_flag }}"
+
+      - name: Maven Compile
+        env:
+          MAVEN_OPTS: ${{ matrix.jvm_flag }}
+        run: mvn -X compile -B --file pom.xml
+
+      - name: Maven Verify
+        env:
+          MAVEN_OPTS: ${{ matrix.jvm_flag }}
+        run: mvn -X verify -B --file pom.xml
+
+      - name: Run tests with coverage
+        env:
+          MAVEN_OPTS: ${{ matrix.jvm_flag }}
+        run: |
+          mvn test jacoco:report
