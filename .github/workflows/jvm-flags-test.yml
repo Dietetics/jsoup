@@ -34,6 +34,13 @@ jobs:
       - name: Run tests with Maven
         run: mvn clean test
 
+      - name: Run tests with JaCoCo
+        run: mvn clean verify
+
+      - name: Copy JaCoCo report
+        run: cp target/site/jacoco/index.html .
+
+
       - name: Upload Test Coverage Report
         if: always()
         run: |
