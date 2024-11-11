@@ -1,5 +1,4 @@
-# .github/workflows/jvm-flags-test.yml
-name: JVM Flags Test
+name: Build
 on:
   push:
   pull_request:
@@ -57,3 +56,18 @@ jobs:
           MAVEN_OPTS: ${{ matrix.jvm_flag }}
         run: |
           mvn test jacoco:report
+
+      - name: Check if JaCoCo report exists
+        if: success()
+        run: |
+          if [ ! -f target/site/jacoco/index.html ]; then
+            echo "JaCoCo report not found!"
+            exit 1
+          fi
+
+      - name: Archive JaCoCo report
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: jacoco-report-${{ matrix.os }}-jdk${{ matrix.java }}-flag${{ matrix.jvm_flag }}
+          path: target/site/jacoco/index.html
