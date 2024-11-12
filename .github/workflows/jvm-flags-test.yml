@@ -1,5 +1,5 @@
 # .github/workflows/jvm-flags-test.yml
-name: JVM Flags Tests2
+name: JVM Flags Tests
 on:
   push:
   pull_request:
