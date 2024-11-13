@@ -4,3 +4,5 @@
 - **-XX:+AggressiveOpts** : Active les optimisations expérimentales pour améliorer les performances.
 - **-XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation** : Fournit des informations diagnostiques détaillées pour la compilation.
 - **-XX:MaxInlineSize=100** : Contrôle la taille maximale des fonctions inline pour ajuster les performances.
+
+xasdasfdf
