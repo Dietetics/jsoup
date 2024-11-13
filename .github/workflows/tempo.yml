@@ -1,4 +1,4 @@
-name: Combined Fun Commits and JVM Flags Test Workflow
+name: temp
 
 on:
   push:
