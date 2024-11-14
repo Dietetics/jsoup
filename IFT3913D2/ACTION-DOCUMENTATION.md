@@ -69,8 +69,7 @@ Voici une petite résumé de la série d'étapes qui vont être exécutées pour
 - Configuration du JDK: configure la version du java
 - Application du flag JVM: le flag JVM sélectionné est passé à la variable d'env MAVEN_OPTS, permet ainsi d'être utiliser pendant l'exécution des tâches Maven
 - Compilation et Tests: mvn compile test, puis la couverture est générée via JaCoCo
-- Analyse de la couverture des tests: vérifier si ya augmentation, si ce n'est pas le cas, ca échoue
-- Sauvegarde et affichage des résultats: les résultats sont sauvegardés dans un fichier texte et est affiché dans les logs
+- Analyse de la couverture des tests: 🔍vérifier si ya augmentation, si ce n'est pas le cas, ca échoue ❌
 
 3. Utilisation des Flags JVM
 
