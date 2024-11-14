@@ -1,5 +1,5 @@
-name: temp
-
+# .github/workflows/jvm-flags-test.yml
+name: JVM Flags Tests
 on:
   push:
   pull_request:
@@ -22,7 +22,7 @@ jobs:
           - "-XX:+PrintGCDetails"
           - "-XX:MaxHeapSize=512m"
           - "-XX:+UnlockExperimentalVMOptions"
-          - "-XX:ConcGCThreads=2"
+          - "-XX:+OptimizeStringConcat"
 
     name: "Test JDK ${{ matrix.java }}, OS: ${{ matrix.os }}, Flag: ${{ matrix.jvm_flag }}"
     steps:
@@ -39,11 +39,36 @@ jobs:
       - name: Log JVM Flag
         run: |
           echo "Running with JVM flag: ${{ matrix.jvm_flag }}"
-          
-          
+
+      - name: Maven Compile
+        env:
+          MAVEN_OPTS: ${{ matrix.jvm_flag }}
+        run: mvn -X compile -B --file pom.xml
+
+      - name: Maven Verify
+        env:
+          MAVEN_OPTS: ${{ matrix.jvm_flag }}
+        run: mvn -X verify -B --file pom.xml
 
       - name: Run tests with coverage
         env:
           MAVEN_OPTS: ${{ matrix.jvm_flag }}
         run: |
           mvn test jacoco:report
+
+      - name: Get JaCoCo Coverage
+        id: coverage
+        run: |
+          coverage=$(python3 config/coverage.py target/site/jacoco/jacoco.csv) 
+          echo "COVERAGE=$coverage" >> $GITHUB_ENV
+
+      - name: Fail if coverage has not improved.
+        run: |
+          coverage=$COVERAGE
+          threshold=90.41
+          if (( $(echo "$coverage <= $threshold" | bc -l) )); then
+            echo "Coverage has not improved."
+            exit 1
+          else
+            echo "New coverage: $coverage%"
+          fi

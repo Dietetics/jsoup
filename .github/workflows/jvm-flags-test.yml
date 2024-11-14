@@ -55,3 +55,20 @@ jobs:
           MAVEN_OPTS: ${{ matrix.jvm_flag }}
         run: |
           mvn test jacoco:report
+
+      - name: Get JaCoCo Coverage
+        id: coverage
+        run: |
+          coverage=$(python3 config/coverage.py target/site/jacoco/jacoco.csv) 
+          echo "COVERAGE=$coverage" >> $GITHUB_ENV
+
+      - name: Fail if coverage has not improved.
+        run: |
+          coverage=$COVERAGE
+          threshold=90.41
+          if (( $(echo "$coverage <= $threshold" | bc -l) )); then
+            echo "Coverage has not improved."
+            exit 1
+          else
+            echo "New coverage: $coverage%"
+          fi
