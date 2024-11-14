@@ -39,3 +39,11 @@ jobs:
       - name: Log JVM Flag
         run: |
           echo "Running with JVM flag: ${{ matrix.jvm_flag }}"
+          
+          
+
+      - name: Run tests with coverage
+        env:
+          MAVEN_OPTS: ${{ matrix.jvm_flag }}
+        run: |
+          mvn test jacoco:report
