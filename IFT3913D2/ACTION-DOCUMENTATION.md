@@ -109,7 +109,7 @@ En résumé, avec ces changements, nous pouvons collecter des données sur la co
 
 
 ## Bonus
-- ![Screenshot de tous les images de lolcommits](lolcommits/ensemble.png)
+![Screenshot de tous les images de lolcommits](lolcommits/ensemble.png)
 - Path pour les images de lolcommits: `src/test/java/org/jsoup/IFT3913D2/lolcommits/`
 ---
 
