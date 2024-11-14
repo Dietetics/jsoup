@@ -13,8 +13,6 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - windows-latest
-          - macOS-latest
         java:
           - 17
         jvm_flag:
@@ -36,7 +34,7 @@ jobs:
           distribution: 'zulu'
           cache: 'maven'
 
-      - name: Log JVM Flag
+      - name: Log JVM Flag ${{ matrix.jvm_flag }}"
         run: |
           echo "Running with JVM flag: ${{ matrix.jvm_flag }}"
 

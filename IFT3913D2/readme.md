@@ -14,20 +14,26 @@
 - [Qualité](#Qualité)
 - [humour](#humour)
 - [Bonus](#Bonus)
+- [Bibliographie](#Bibliographie)
 ---
 
 ## Differents flags
-  - "-XX:+UseG1GC"   
-  - "-XX:+PrintGCDetails"
-  - "-XX:MaxHeapSize=512m"
-  - "-XX:+UnlockExperimentalVMOptions"
-  - "-XX:+OptimizeStringConcat"
-
+- Gestion du garbage collector:
+  - "-XX:+UseG1GC"                                    
+- Diagnostic:
+  - "-XX:+PrintGCDetails"               
+- Gestion de la memoire:
+  - "-XX:MaxHeapSize=512m"              
+- Activation de fonctionnalités avancées:
+  - "-XX:+UnlockExperimentalVMOptions"  
+- Compilation JIT:
+  - "-XX:+OptimizeStringConcat"         
 
 ---
 
-## Structure
 
+
+## Structure
 avant notre test ![couverture sur close avant test](assets/methodeCloseAvant.png)
 
 
@@ -46,6 +52,7 @@ s
 ---
 
 ## Qualité
+
 ---
 
 
@@ -57,3 +64,7 @@ s
 ## Bonus
 - voir lien pour les images
 - ---
+
+## Bibliographie
+
+---

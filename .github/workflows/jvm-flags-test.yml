@@ -22,7 +22,7 @@ jobs:
           - "-XX:+UnlockExperimentalVMOptions"
           - "-XX:+OptimizeStringConcat"
 
-    name: "Test JDK ${{ matrix.java }}, OS: ${{ matrix.os }}, Flag: ${{ matrix.jvm_flag }}"
+    name: "Test Flag: ${{ matrix.jvm_flag }}, JDK: ${{ matrix.java }}, OS: ${{ matrix.os }}"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
