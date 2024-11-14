@@ -103,8 +103,12 @@ En résumé, avec ces changements, nous pouvons collecter des données sur la co
 
 
 ## humour
-- Voir github action, voici un exemple 😎:
-- ![Screenshot d humour](assets/humour.png)
+- Voir à travers tout le travail, voici un exemple 😎:
+
+Dans ce projet, nous avons mis en place une section intitulée **"Relax, You Got This"**. Pourquoi ceci ? Parce qu'un peu d'encouragement ne fait jamais de mal, surtout quand on attend impatiemment que les tests passent ! 💪
+![Screenshot d humour](assets/humour.png)
+
+- Quand on dit "Relax, You Got This", on le pense vraiment. Faites confiance aux processus et laissez GitHub Actions vous aider à atteindre la sérénité dans votre code ! 😄
 ---
 
 
