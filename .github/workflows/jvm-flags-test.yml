@@ -22,7 +22,7 @@ jobs:
           - "-XX:+PrintGCDetails"
           - "-XX:MaxHeapSize=512m"
           - "-XX:+UnlockExperimentalVMOptions"
-          - "-XX:TieredStopAtLevel=1"
+          - "-XX:+OptimizeStringConcat"
 
     name: "Test JDK ${{ matrix.java }}, OS: ${{ matrix.os }}, Flag: ${{ matrix.jvm_flag }}"
     steps:
