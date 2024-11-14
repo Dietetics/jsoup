@@ -70,11 +70,3 @@ jobs:
           else
             echo "✅ New coverage: $coverage%"
           fi
-
-      - name: Save Coverage for Flag ${{ matrix.jvm_flag }}
-        run: |
-          echo "Coverage for flag ${{ matrix.jvm_flag }}: $COVERAGE" >> coverage_results.txt
-
-      - name: Display Coverage Results
-        run: |
-          cat coverage_results.txt
