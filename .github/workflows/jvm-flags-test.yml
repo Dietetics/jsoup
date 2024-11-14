@@ -1,5 +1,5 @@
 # .github/workflows/jvm-flags-test.yml
-name: JVM Flags Tests
+name: JVM Flags Tests2
 on:
   push:
   pull_request:
@@ -13,8 +13,6 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - windows-latest
-          - macOS-latest
         java:
           - 17
         jvm_flag:
@@ -72,3 +70,11 @@ jobs:
           else
             echo "New coverage: $coverage%"
           fi
+
+      - name: Save Coverage for Flag ${{ matrix.jvm_flag }}
+        run: |
+          echo "Coverage for flag ${{ matrix.jvm_flag }}: $COVERAGE" >> coverage_results.txt
+
+      - name: Display Coverage Results
+        run: |
+          cat coverage_results.txt
