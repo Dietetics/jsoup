@@ -126,4 +126,5 @@ parametres JVM affectent les tests et les performances.
 ## Bibliographie
 - [Oracle](https://www.oracle.com/java/technologies/javase/vmoptions-jsp.html)
 - [bellsoft](https://bell-sw.com/blog/guide-to-jvm-memory-configuration-options/)
+- [Text Art](https://fsymbols.com/text-art/)
 ---
