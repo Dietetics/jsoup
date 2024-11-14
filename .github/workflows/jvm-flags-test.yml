@@ -34,7 +34,7 @@ jobs:
           distribution: 'zulu'
           cache: 'maven'
 
-      - name: Log JVM Flag
+      - name: Log JVM Flag ${{ matrix.jvm_flag }}"
         run: |
           echo "Running with JVM flag: ${{ matrix.jvm_flag }}"
 

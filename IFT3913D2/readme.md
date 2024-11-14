@@ -7,6 +7,8 @@
 
 ---
 ## Table des matières
+- [Flags](#Differents-flags)
+- [Structure](#Structure)
 - [Changement apportés à la Github action ](#Changement-apportés-à-la-Github-action)
 - [Justification des Flags](#Justification-des-Flags)
 - [Qualité](#Qualité)
@@ -14,9 +16,24 @@
 - [Bonus](#Bonus)
 ---
 
+## Differents flags
+  - "-XX:+UseG1GC"   
+  - "-XX:+PrintGCDetails"
+  - "-XX:MaxHeapSize=512m"
+  - "-XX:+UnlockExperimentalVMOptions"
+  - "-XX:+OptimizeStringConcat"
 
 
+---
+
+## Structure
+
+avant notre test ![couverture sur close avant test](assets/methodeCloseAvant.png)
+
+
+---
 ## Changement apportés à la Github action 
+s
 ---
 
 ## Justification des Flags
