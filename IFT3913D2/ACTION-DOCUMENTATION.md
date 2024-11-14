@@ -114,7 +114,8 @@ parametres JVM affectent les tests et les performances.
 
 
 ## humour
-- voir github action
+- Voir github action, voici un exemple:
+- ![Screenshot de tous les images de lolcommits](lolcommits/global.png)
 ---
 
 
