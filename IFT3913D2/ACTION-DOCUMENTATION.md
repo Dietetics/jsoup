@@ -8,8 +8,8 @@
 - [Justification des Flags](#Justification-des-Flags)
 - [Qualité](#Qualité)
 - [humour](#humour)
-- [Bonus](#Bonus)
-- [Bibliographie](#Bibliographie)
+- [🎉🎁💎Bonus💎🎁🎉](#Bonus)
+- [📚📝Bibliographie](#Bibliographie)
 ---
 
 ## Differents flags
@@ -35,50 +35,49 @@
 
 
 ## Changement apportes a la Github action 
-Au lieu de modifier les workflows existant, on a creer une nouvelle workflows au nom de jvm-flags-test.yml afin deviter 
-les conflits visuels avec les workflows du tache2. On a garder la structure du build.yml, mais avec certain modification 
-et amelioration.
+Au lieu de modifier les workflows existants, nous avons créé un nouveau workflow nommé jvm-flags-test.yml afin d'éviter 
+les conflits visuels avec les workflows de la tâche 2. Nous avons gardé la structure du build.yml, mais avec certaines modifications et améliorations.
 
-1. `Configuration de la matrice de strategie
+1. Configuration de la matrice de strategie
 
-On a ajouter la matrix jvm_flag（`matrice de strategie`) qui permet dexecuter un job plusieurs 
-fois avec des configurations differentes. Voici les  5 flags dans la matrix:
+Nous avons ajouté la matrice jvm_flag (`matrice de stratégie`) qui permet d'exécuter un job plusieurs fois avec des 
+configurations différentes. Voici les 5 flags dans la matrice
 
-- "-XX:+UseG1GC", lors dexecution, permettre dactiver le garbage collector G1
-- "-XX:+PrintGCDetails", lors dexecution, permettre dafficher les details des evenements de GC
-- "-XX:MaxHeapSize=512m", lors dexecution, limite la taille maximale du tas a 512Mo
-- "-XX:+UnlockExperimentalVMOptions", lors dexecution, deverrouille les options experimentales de la JVM
-- "-XX:+OptimizeStringConcat", lors dexecution, optimise les operations de concatenation de chaines
+- "-XX:+UseG1GC", Lors de l'exécution, permet d'activer le garbage collector G1.
+- "-XX:+PrintGCDetails", Lors de l'exécution, permet d'afficher les détails des événements de GC
+- "-XX:MaxHeapSize=512m", Lors de l'exécution, limite la taille maximale du tas à 512 Mo
+- "-XX:+UnlockExperimentalVMOptions", Lors de l'exécution, déverrouille les options expérimentales de la JVM.
+- "-XX:+OptimizeStringConcat", Lors de l'exécution, optimise les opérations de concaténation de chaînes
 
-Si necessaire, on peut aussi definir l'environnement ou la version de java (dans notre cas, ce nest pas necessaire)
+Si nécessaire, nous pouvons également définir l'environnement ou la version de Java dans la matrice(dans notre cas, cela n'est pas nécessaire).
 
 2. Execution des étapes du workflow
 
-Voici une petite résumé de la série d'étapes qui vont être exécutées pour chaque combinaison de la matrice
-- Checkout du code: récupère le code source du repo pour l'utiliser
-- Configuration du JDK: configure la version du java
-- Application du flag JVM: le flag JVM sélectionné est passé à la variable d'env MAVEN_OPTS, permet ainsi d'être utiliser pendant l'exécution des tâches Maven
-- Compilation et Tests: mvn compile test, puis la couverture est générée via JaCoCo
-- Analyse de la couverture des tests: 🔍vérifier si ya augmentation, si ce n'est pas le cas, ca échoue ❌
+Voici un petit résumé des étapes qui seront exécutées pour chaque combinaison de la matrice :
+- Checkout du code : Récupère le code source du repo pour l'utiliser.
+- Configuration du JDK : Configure la version de Java.
+- Application du flag JVM : Le flag JVM sélectionné est passé à la variable d'environnement MAVEN_OPTS, permettant ainsi son utilisation pendant l'exécution des tâches Maven.
+- Compilation et tests : Exécute mvn compile test, puis la couverture est générée via JaCoCo.
+- Analyse de la couverture des tests : 🔍Vérifie s'il y a une augmentation de la couverture. Si ce n'est pas le cas, l'étape échoue❌
 
 3. Utilisation des Flags JVM
 
-   - Comme mentionner si haut concernant la variable d'environnement MAVEN_OPTS. Cela permet à Maven de les utiliser pour personnaliser la facon dont la JVM sexecute pendant les etapes de compilation, de test et d'execution
+Comme mentionné plus haut, la variable d'environnement MAVEN_OPTS permet à Maven d'utiliser ces flags pour personnaliser la façon dont la JVM s'exécute pendant les étapes de compilation, de test et d'exécution.
 
-Bref, avec ces changements, on peut collectionner les donnees sur la couverture de code, de mieux comprendre comment differents
-parametres JVM affectent les tests et les performances.
+En résumé, avec ces changements, nous pouvons collecter des données sur la couverture de code et mieux comprendre comment différents paramètres JVM affectent les tests et les performances.
+
 ---
 
 
 ## Justification des Flags
 1. -XX:+UseG1GC
-- **Performance** : Il permet activer le garbage collector G1, qui est super pour gérer la mémoire dans des applications avec beaucoup de données. Il essaie de limiter les pauses dues à la gestion de la mémoire, ce qui peut améliorer les performances.
+- **Performance** : Il permet dactiver le garbage collector G1, qui est super pour gérer la mémoire dans des applications avec beaucoup de données. Il essaie de limiter les pauses dues à la gestion de la mémoire, ce qui peut améliorer les performances.
 - **Observabilité** : Il fournit beaucoup d'infos sur la gestion de la mémoire, donc on peut facilement voir si quelque chose ne va pas (comme des fuites de mémoire).
 - **Pourquoi c'est choisi** : Il aide à tester la gestion de la mémoire et la performance. C'est utile pour voir comment un application réagit à des demandes de mémoire importantes.
 
 2. -XX:+PrintGCDetails
-- **Performance** : Il fait en sorte que la JVM affiche des détails sur le garbage collection dans les logs. On saura exactement combien de temps chaque étape du garbage collection prend, quelle est la taille de la mémoire avant et après chaque collecte, etc.
-- **Observabilité** : Ca peut légèrement ralentir l'application, car il y a plus de log à traiter, mais les infos sont super utiles pour comprendre ce qui se passe en arrière-plan.
+- **Performance** : Ca peut légèrement ralentir l'application, car il y a plus de log à traiter, mais les infos sont super utiles pour comprendre ce qui se passe en arrière-plan.
+- **Observabilité** : Il fait en sorte que la JVM affiche des détails sur le garbage collection dans les logs. On saura exactement combien de temps chaque étape du garbage collection prend, quelle est la taille de la mémoire avant et après chaque collecte, etc.
 - **Pourquoi c'est choisi** : C'est vraiment utile pour avoir une vue détaillée de la gestion de la mémoire et de l'impact du garbage collection, surtout pendant les tests.
 
 3. -XX:MaxHeapSize=512m
