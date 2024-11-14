@@ -1,9 +1,4 @@
 # Tâche #3: test sur divers environnements
-- Sujet prise: Jsoup 
-
-# Auteurs:
-- Yongkang He 20220607
-- Wanting teng 20179470
 
 ---
 ## Table des matières
@@ -33,12 +28,7 @@
 
 
 ## Structure
--         name: "Test Flag: ${{ matrix.jvm_flag }}, JDK: ${{ matrix.java }}, OS: ${{ matrix.os }}"
--       - name: Log JVM Flag ${{ matrix.jvm_flag }}"
-          run: |
-          echo "Running with JVM flag: ${{ matrix.jvm_flag }}"
-Effet 1： ![Logs Clairs](assets/logsClairs.png)
-Effet 2： ![Logs Clairs](assets/logsClairs2.png)
+- Voir github action
 ---
 
 
@@ -114,13 +104,13 @@ parametres JVM affectent les tests et les performances.
 
 
 ## humour
-- Voir github action, voici un exemple:
-- ![Screenshot de tous les images de lolcommits](lolcommits/global.png)
+- Voir github action, voici un exemple 😎:
+- ![Screenshot d humour](assets/humour.png)
 ---
 
 
 ## Bonus
-- ![Screenshot de tous les images de lolcommits](lolcommits/global.png)
+- ![Screenshot de tous les images de lolcommits](lolcommits/ensemble.png)
 - Path pour les images de lolcommits: `src/test/java/org/jsoup/IFT3913D2/lolcommits/`
 ---
 

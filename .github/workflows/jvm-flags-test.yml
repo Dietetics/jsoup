@@ -107,7 +107,8 @@ jobs:
             echo "❌ Coverage has not improved."
             exit 1
           else
-            echo "🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
+            echo "
+                  🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
                   🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
                   🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
                   🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
